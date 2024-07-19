@@ -1,5 +1,71 @@
 # healthbot-eve
 
+
+Features
+Health and Wellness Advice: Provides expert health tips and answers to health-related questions.
+Mathematical Evaluation: Can evaluate and return results for mathematical expressions.
+User Interaction: Handles greetings, farewells, and common exit commands.
+Help Command: Offers a help message detailing available commands.
+Session Management: Allows users to clear chat history and access login/register pages.
+Requirements
+Python 3.6+
+Flask
+ChatterBot
+NLTK
+SymPy
+JSON file with health-related training data
+
+Installation
+Clone the Repository:
+
+
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+Install Dependencies:
+
+Create a virtual environment and install the required packages:
+
+
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install -r requirements.txt
+Make sure requirements.txt includes:
+
+
+Flask
+ChatterBot
+nltk
+sympy
+Download NLTK Data:
+
+Run the following commands to download necessary NLTK data:
+
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger')
+Prepare the Knowledge Base:
+
+Ensure you have a knowledge_base.json file in the root directory of the project. This file should contain health-related training data structured as:
+
+json
+Copy code
+{
+    "training_data": [
+        "question1",
+        "answer1",
+        "question2",
+        "answer2"
+    ]
+}
+Running the Application
+To start the application, run:
+
+
+python eve.py
+The application will be available at http://localhost:5000.
+
+
 User Guide
 Welcome to EVE, your personal health and wellness assistant! EVE is designed to help you with health-related questions and provide useful advice.
 
