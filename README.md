@@ -49,7 +49,6 @@ Prepare the Knowledge Base:
 Ensure you have a knowledge_base.json file in the root directory of the project. This file should contain health-related training data structured as:
 
 json
-Copy code
 {
     "training_data": [
         "question1",
