@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVE.AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a target="_blank" href="{{ url_for('login') }}">LOGIN</a></li>
+                <li><a target="_blank" href="{{url_for('register')}}">REGISTER</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="conversation-page">
+            <h1>Chat with Eve</h1>
+            <div id="chat-container">
+                <!-- Messages will be dynamically added here -->
+            </div>
+            <form id="chat-form" method="post" action="/">
+                <input id="user-input" type="text" name="user_input" placeholder="Type a message..." required>
+                <button id="send-button" type="submit">Send</button>
+                <button id="clear-button" type="button">Clear Chat</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        $("#chat-container").append(`<div class="message bot-message"><strong>EVE:</strong> Welcome back🫂 ! I'm EVE😋️, your personalized health AI🥼.<br>Feel free to type 'help' to discover advanced Eve healthbot commands,<br> or ask any health-related question😄️, <br> I'll provide you with the best possible assistance 💉 .</div>`);
+        $(document).ready(function() {
+            $("#chat-form").on("submit", function(event) {
+                event.preventDefault();
+                var userInput = $("#user-input").val();
+                if(userInput.trim() === "") return;
+
+                $("#chat-container").append(`<div class="message user-message"><strong>YOU 👤️:</strong> ${userInput}</div>`);
+                $.post("/", { user_input: userInput }, function(response) {
+                    $("#chat-container").append(`<div class="message bot-message"><strong>EVE 👩‍⚕️:</strong> ${response.text}</div>`);
+                    $("#user-input").val("");
+                });
+            });
+
+            $("#clear-button").on("click", function() {
+                $.post("/clear", function() {
+                    $("#chat-container").empty();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

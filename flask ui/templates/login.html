@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EVE.AI</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{url_for('home')}}">HOME</a></li>
+                <li><a href="{{url_for('register')}}">SIGN UP </a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="login-page">
+            <h1>Login Page</h1>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Signin">
+            </form>
+        </section>
+    </main>
+</body>
+</html>

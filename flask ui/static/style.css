@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7; /* light gray background */
+}
+
+header {
+  background-color: #4567b7; /* soft blue background */
+  color: #ffffff; /* white text */
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #ffffff; /* white text */
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+#conversation-page {
+  background-color: #ffffff; /* white background */
+  padding: 2em;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-container {
+  padding: 1em;
+  overflow-y: auto;
+  background-color: #f2f2f2; /* light gray background */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#user-input {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff; /* white background */
+  color: #333; /* dark gray text */
+}
+
+#user-input:focus {
+  border: 1px solid #4567b7; /* soft blue border on focus */
+  border-color: #4567b7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#send-button {
+  background-color: #4567b7; /* soft blue background */
+  color: black; /* white text */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-top: 20px;
+
+}
+
+#send-button:hover {
+  background-color: green; /* soft blue background */
+  color: #ffffff; /* white text */
+}
